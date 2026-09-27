@@ -1,11 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.card}>
+        <Text style={styles.title}>Bienvenido</Text>
+        <Text style={styles.subtitle}>Introduce tus datos para continuar</Text>
+
+        <TextInput style={styles.input} placeholder="Correo electrónico" />
+        <TextInput style={styles.input} placeholder="Contraseña" secureTextEntry />
+
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
+        </Pressable>
+
+        <Text style={styles.register}>¿No tienes cuenta? Regístrate</Text>
+      </View>
     </View>
   );
 }
@@ -13,8 +23,48 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    padding: 24,
+    backgroundColor: '#83ffea',
+  },
+  card: {
+    width: '100%',
+    maxWidth: 420,
+    alignSelf: 'center',
+    padding: 28,
+    backgroundColor: 'white',
+    borderRadius: 16,
+
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+  subtitle: {
+    marginTop: 8,
+    marginBottom: 28,
+    color: '#64748b',
+  },
+  input: {
+    backgroundColor: '#f1f5f9',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 14,
+  },
+  button: {
+    marginTop: 8,
+    backgroundColor: '#2563eb',
+    padding: 16,
+    borderRadius: 12,
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  register: {
+    textAlign: 'center',
+    marginTop: 22,
+    color: '#64748b',
   },
 });
