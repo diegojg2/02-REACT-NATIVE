@@ -9,7 +9,7 @@ A usar ScrollView como contenedor para listas de contenido. He aprendido a crear
 Deben cambiar: la categoría, el título y la fecha, la estructura visual , el componente NewsCard y su forma de renderizarse deben mantenerse igual.
 
 ## Qué he modificado
-Un ScrollView como contenedor principal, diseñé la tarjeta NewsCard con categoría, título y fecha, extraje la estructura a un componente que recibe props (category y title), reutilicé el componente para crear la quinta tarjeta
+Un ScrollView como contenedor principal, las NewsCard con categoría, título y fecha, extrayendo la estructura a un componente que recibe category y title, reutilizando el componente para crear la quinta tarjeta
 
 ## Resultado
-Un feed de noticias desplazable con cuatro tarjetas de noticia idénticas en estructura pero diferentes en contenido. Cada tarjeta muestra categoría en azul, título destacado y fecha. El ScrollView permite desplazarse si hay más noticias de las que caben en pantalla.
+Un feed de noticias desplazable con cuatro tarjetas de noticia idénticas pero con distinto contenido. Cada tarjeta muestra categoría en azul, título y fecha. El ScrollView permite desplazarse si hay más noticias de las que caben en pantalla.
