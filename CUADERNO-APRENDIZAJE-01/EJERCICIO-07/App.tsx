@@ -8,6 +8,7 @@ export default function App() {
       <NewsCard category="TECNOLOGÍA" title="La IA transforma el desarrollo de software" />
       <NewsCard category="MÓVIL" title="React Native continúa evolucionando" />
       <NewsCard category="CLOUD" title="Las arquitecturas cloud ganan protagonismo" />
+      <NewsCard category="SEGURIDAD" title="Nuevas vulnerabilidades en las web" />
     </ScrollView>
   );
 }
