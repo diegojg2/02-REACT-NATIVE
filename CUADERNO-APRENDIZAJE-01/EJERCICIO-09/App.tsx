@@ -3,41 +3,33 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <ScrollView style={styles.container}>
-      {/* Paso 1: Bloques visuales - Saludo */}
+
       <Text style={styles.hello}>Buenos días 👋</Text>
       <Text style={styles.user}>Laura</Text>
 
-      {/* Paso 2: Tarjeta de saldo destacada */}
       <View style={styles.balanceCard}>
         <Text style={styles.balanceLabel}>Saldo disponible</Text>
         <Text style={styles.balance}>4.280,32 €</Text>
         <Text style={styles.account}>ES00 •••• •••• 7821</Text>
       </View>
 
-      {/* Paso 3: Fila de acciones rápidas */}
       <View style={styles.actions}>
         <Action icon="📤" label="Enviar" />
         <Action icon="📥" label="Solicitar" />
         <Action icon="⋯" label="Más" />
       </View>
 
-      {/* Paso 6: Reutilizar Movement varias veces */}
       <Text style={styles.sectionTitle}>Últimos movimientos</Text>
       <Movement title="Supermercado" date="Hoy" amount="-42,80 €" />
       <Movement title="Cafetería" date="Ayer" amount="-3,20 €" />
       <Movement title="Nómina" date="20 septiembre" amount="+2.340 €" />
       <Movement title="Electricidad" date="18 septiembre" amount="-74,20 €" />
       
-      {/* Movimiento positivo adicional: Se renderiza igual que los demás.
-          El componente Movement detecta si el amount empieza con + o -
-          y lo colorea automáticamente. Sin cambiar la estructura del componente. */}
       <Movement title="Freelance" date="15 septiembre" amount="+285 €" />
     </ScrollView>
   );
 }
 
-// Paso 4: Diseñar un movimiento
-// Paso 5: Extraer Movement a componente reutilizable
 type MovementProps = {
   title: string;
   date: string;
@@ -60,7 +52,6 @@ function Movement({ title, date, amount }: MovementProps) {
   );
 }
 
-// Componente para acciones rápidas
 type ActionProps = {
   icon: string;
   label: string;

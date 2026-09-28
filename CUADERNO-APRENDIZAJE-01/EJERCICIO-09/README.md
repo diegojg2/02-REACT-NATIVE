@@ -12,4 +12,4 @@ Movement y Action deben ser componentes porque se repiten múltiples veces y cam
 He añadido la fila de acciones entre el saldo y los movimientos, Movement detecta si el total es positivo o negativo y lo colorea automáticamente de verde o rojo. Agregué un quinto movimiento (Freelance) para demostrar que sin cambiar el componente, solo cambiando el prop amount, se renderiza un ingreso.
 
 ## Resultado
-App de banca con saludo, tarjeta de saldo negra destacada, acciones rápidas en el medio, y lista de movimientos en verde o en rojo). 
+App de banca con saludo, tarjeta de saldo negra destacada, acciones rápidas en el medio, y lista de movimientos en verde o en rojo. 
