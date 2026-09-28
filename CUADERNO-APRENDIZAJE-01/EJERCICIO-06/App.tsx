@@ -1,11 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* Paso 1: Encabezado del dashboard */}
+      <Text style={styles.title}>Dashboard</Text>
+      <Text style={styles.subtitle}>Resumen del negocio</Text>
+
+      {/* Paso 2-3: Contenedor grid con flexDirection 'row' y flexWrap activado */}
+      <View style={styles.grid}>
+        {/* Paso 5: Cuatro métricas repetidas */}
+        <Metric title="Ventas" value="12.450 €" change="+12%" />
+        <Metric title="Clientes" value="348" change="+8%" />
+        <Metric title="Pedidos" value="1.024" change="+18%" />
+        <Metric title="Conversión" value="7,4%" change="+2%" />
+        
+        {/* Quinta tarjeta: Se coloca en una nueva fila (abajo a la izquierda)
+            porque flexWrap: 'wrap' hace que cuando no cabe en la fila actual
+            (2 tarjetas ocupan 100% del ancho con márgenes), automáticamente
+            pasa a la siguiente fila. Al tener solo una tarjeta en esta fila,
+            ocupa el 48% a la izquierda y queda espacio libre a la derecha. */}
+        <Metric title="Ingresos" value="45.230 €" change="+25%" />
+      </View>
+    </View>
+  );
+}
+
+function Metric({ title, value, change }: { title: string; value: string; change: string }) {
+  return (
+    <View style={styles.card}>
+      <Text style={styles.label}>{title}</Text>
+      <Text style={styles.value}>{value}</Text>
+      <Text style={styles.change}>{change}</Text>
     </View>
   );
 }
@@ -13,8 +39,42 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: 24,
+    paddingTop: 70,
+    backgroundColor: '#f8fafc',
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+  },
+  subtitle: {
+    color: '#64748b',
+    marginTop: 5,
+    marginBottom: 28,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  card: {
+    width: '48%',
+    backgroundColor: 'white',
+    padding: 18,
+    borderRadius: 16,
+    marginBottom: 16,
+    marginRight: '4%',
+  },
+  label: {
+    color: '#64748b',
+  },
+  value: {
+    fontSize: 23,
+    fontWeight: 'bold',
+    marginTop: 8,
+  },
+  change: {
+    color: '#16a34a',
+    fontWeight: 'bold',
+    marginTop: 8,
   },
 });
