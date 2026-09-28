@@ -3,24 +3,17 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* Paso 1: Encabezado del dashboard */}
       <Text style={styles.title}>Dashboard</Text>
       <Text style={styles.subtitle}>Resumen del negocio</Text>
 
-      {/* Paso 2-3: Contenedor grid con flexDirection 'row' y flexWrap activado */}
       <View style={styles.grid}>
         {/* Paso 5: Cuatro métricas repetidas */}
         <Metric title="Ventas" value="12.450 €" change="+12%" />
         <Metric title="Clientes" value="348" change="+8%" />
         <Metric title="Pedidos" value="1.024" change="+18%" />
         <Metric title="Conversión" value="7,4%" change="+2%" />
-        
-        {/* Quinta tarjeta: Se coloca en una nueva fila (abajo a la izquierda)
-            porque flexWrap: 'wrap' hace que cuando no cabe en la fila actual
-            (2 tarjetas ocupan 100% del ancho con márgenes), automáticamente
-            pasa a la siguiente fila. Al tener solo una tarjeta en esta fila,
-            ocupa el 48% a la izquierda y queda espacio libre a la derecha. */}
-        <Metric title="Ingresos" value="45.230 €" change="+25%" />
+        /* Quinta tarjeta: Se coloca en una nueva fila (abajo a la izquierda) porque flexWrap: 'wrap' hace que cuando no cabe en la fila actual automáticamente se pase a la siguiente. */
+        <Metric title="Ingresos" value="42.000 €" change="+25%" />
       </View>
     </View>
   );
